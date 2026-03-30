@@ -1,0 +1,6 @@
+#优惠券服务
+spring:
+  application:
+    name: coupon-service
+  profiles:
+    active: dev

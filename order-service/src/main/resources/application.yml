@@ -1,0 +1,6 @@
+#订单服务
+spring:
+  application:
+    name: order-service
+  profiles:
+    active: dev
