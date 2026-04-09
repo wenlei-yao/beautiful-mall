@@ -1,17 +1,13 @@
-package com.yao.coupon.entity;
+package com.yao.coupon.dto.resp;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
-/**
- * 优惠券活动表实体
- */
 @Data
-@TableName("coupon_activity")
-public class CouponActivity {
-
+public class CouponActivityQueryRespDTO {
     @TableId(type = IdType.AUTO)
     private Long id;
 
@@ -41,10 +37,4 @@ public class CouponActivity {
      * 状态：1-未开始，2-进行中，3-已结束，4-已停止
      */
     private Integer status;
-
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
-
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateTime;
 }

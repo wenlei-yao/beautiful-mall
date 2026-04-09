@@ -1,4 +1,4 @@
-package com.yao.coupon.entity;
+package com.yao.coupon.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @TableName("coupon_receive_record")
-public class CouponReceiveRecord {
+public class CouponReceiveRecordDO {
 
     @TableId(type = IdType.AUTO)
     private Long id;

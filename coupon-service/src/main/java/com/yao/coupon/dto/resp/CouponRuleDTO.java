@@ -1,4 +1,4 @@
-package com.yao.coupon.dto;
+package com.yao.coupon.dto.resp;
 
 import lombok.Data;
 

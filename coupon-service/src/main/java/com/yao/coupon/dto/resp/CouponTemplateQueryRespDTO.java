@@ -1,19 +1,14 @@
-package com.yao.coupon.entity;
+package com.yao.coupon.dto.resp;
 
-import com.baomidou.mybatisplus.annotation.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-/**
- * 优惠券模板实体
- */
 @Data
-@TableName("coupon_template")
-public class CouponTemplate {
-
-    @TableId(type = IdType.AUTO)
+@AllArgsConstructor
+public class CouponTemplateQueryRespDTO {
     private Long id;
 
     private String name;
@@ -73,12 +68,4 @@ public class CouponTemplate {
     private String ruleJson;
 
     private Integer status;
-
-    private String createUser;
-
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
-
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateTime;
 }

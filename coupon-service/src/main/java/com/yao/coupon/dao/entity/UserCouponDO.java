@@ -1,6 +1,7 @@
-package com.yao.coupon.entity;
+package com.yao.coupon.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -10,7 +11,8 @@ import java.time.LocalDateTime;
  */
 @Data
 @TableName("user_coupon")
-public class UserCoupon {
+@Builder
+public class UserCouponDO {
 
     @TableId(type = IdType.AUTO)
     private Long id;

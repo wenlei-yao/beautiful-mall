@@ -1,0 +1,13 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yao.coupon.mapper.CouponActivityMapper">
+
+
+    <update id="decrementCouponActivityStock">
+        update coupon_activity
+        set remaining_count = remaining_count - #{decrementNum}
+        where id = #{activityId}
+        and remaining_count >= #{decrementNum}
+    </update>
+</mapper>

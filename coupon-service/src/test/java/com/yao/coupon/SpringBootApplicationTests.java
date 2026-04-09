@@ -1,6 +1,6 @@
 package com.yao.coupon;
 
-import com.yao.coupon.entity.CouponActivity;
+import com.yao.coupon.dao.entity.CouponActivityDO;
 import com.yao.coupon.service.CouponActivityService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ public class SpringBootApplicationTests {
 
     @Test
     public void testAddUser() {
-        CouponActivity byId = userService.getById(1L);
+        CouponActivityDO byId = userService.getById(1L);
         System.out.println(byId);
     }
 

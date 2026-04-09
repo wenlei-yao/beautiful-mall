@@ -14,7 +14,6 @@ public class GlobalExceptionAdvice {
 
     @ExceptionHandler(BusinessException.class)
     public Result<Void> handlerLoginException(BusinessException e) {
-        log.error("业务异常", e);
         return Result.fail(e.getErrorCode().getCode(), e.getErrorCode().getMessage());
     }
 

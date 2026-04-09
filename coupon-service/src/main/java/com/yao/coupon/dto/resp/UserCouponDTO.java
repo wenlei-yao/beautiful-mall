@@ -1,5 +1,6 @@
-package com.yao.coupon.dto;
+package com.yao.coupon.dto.resp;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
