@@ -23,9 +23,7 @@ public class CouponReceiveRecordDO {
 
     private Integer receiveCount;
 
-    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
-    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 }

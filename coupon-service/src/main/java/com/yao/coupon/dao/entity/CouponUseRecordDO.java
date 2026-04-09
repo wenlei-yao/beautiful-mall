@@ -28,6 +28,5 @@ public class CouponUseRecordDO {
 
     private LocalDateTime useTime;
 
-    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 }
