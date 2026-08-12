@@ -1,5 +1,6 @@
-package com.yao.base.framework.config.filter;
+package com.yao.base.framework.filter;
 
+import com.yao.base.framework.constant.CommonConstants;
 import org.slf4j.MDC;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -15,21 +16,18 @@ import java.util.UUID;
 @Order(Ordered.HIGHEST_PRECEDENCE) // 最高优先级，最先执行
 public class TraceIdFilter implements Filter {
 
-    private static final String TRACE_ID_KEY = "traceId";
-    private static final String TRACE_ID_HEADER = "X-Trace-Id";
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
                          FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         try {
-            String traceId = httpRequest.getHeader(TRACE_ID_HEADER);
+            String traceId = httpRequest.getHeader(CommonConstants.HEADER_TRACE_ID);
             if (traceId == null || traceId.isEmpty()) {
                 traceId = UUID.randomUUID().toString().replace("-", "");
             }
-            MDC.put(TRACE_ID_KEY, traceId);
-            httpResponse.setHeader(TRACE_ID_HEADER, traceId);
+            MDC.put(CommonConstants.TRACE_ID_KEY, traceId);
+            httpResponse.setHeader(CommonConstants.HEADER_TRACE_ID, traceId);
             chain.doFilter(request, response);
         } finally {
             MDC.clear();

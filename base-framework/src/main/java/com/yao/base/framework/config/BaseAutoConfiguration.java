@@ -2,7 +2,7 @@ package com.yao.base.framework.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yao.base.framework.aspect.ControllerLogAspect;
-import com.yao.base.framework.config.filter.TraceIdFilter;
+import com.yao.base.framework.filter.TraceIdFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
