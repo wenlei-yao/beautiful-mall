@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.yao.base.framework.config.BaseAutoConfiguration,\
-  com.yao.base.framework.redis.RedisAutoConfiguration
-
+  com.yao.base.framework.redis.RedisAutoConfiguration,\
+  com.yao.base.framework.feign.FeignErrorDecoderAutoConfiguration
