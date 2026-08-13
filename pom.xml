@@ -14,6 +14,7 @@
         <module>base-framework</module>
         <module>gateway-service</module>
         <module>auth-service</module>
+        <module>user-service</module>
     </modules>
 
     <properties>
@@ -30,10 +31,29 @@
         <hutool.version>5.8.38</hutool.version>
         <redisson.version>3.27.2</redisson.version>
         <fastjson.version>2.0.56</fastjson.version>
+        <jwt.verion>0.11.5</jwt.verion>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- JWT 核心依赖 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jwt.verion}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jwt.verion}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId> <!-- 或 jjwt-gson，用于 JSON 序列化 -->
+                <version>${jwt.verion}</version>
+                <scope>runtime</scope>
+            </dependency>
             <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
