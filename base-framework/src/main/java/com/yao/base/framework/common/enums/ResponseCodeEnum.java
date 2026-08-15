@@ -18,6 +18,7 @@ public enum ResponseCodeEnum implements ErrorCode {
     PRODUCT_SAVE_FAILED(405, "商品保存失败"),
     PRODUCT_SKU_SAVE_FAILED(406, "商品SKU保存失败"),
     DUPLICATE_SUBMIT(407, "请勿重复提交"),
+    ACCOUNT_DISABLED(408, "账号已被禁用"),
 
 
     //活动有关
