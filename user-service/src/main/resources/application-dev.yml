@@ -1,2 +1,25 @@
 server:
-  port: 8084
+  port: 8093
+
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ywl123000...
+    url: jdbc:mysql://127.0.0.1:3306/beautiful_mall?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false&sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES'
+    hikari:
+      pool-name: Retail_HikariCP
+      minimum-idle: 15        # 最小空闲连接数
+      maximum-pool-size: 25   # 最大连接数
+      idle-timeout: 180000    # 空闲连接存活时间 (3分钟)
+      max-lifetime: 1800000   # 连接最大生命周期 (30分钟，建议比 MySQL 端的 wait_timeout 小 2~3 分钟)
+      connection-timeout: 30000 # 获取连接超时时间 (30秒)
+      auto-commit: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+

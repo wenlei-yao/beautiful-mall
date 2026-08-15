@@ -32,10 +32,16 @@
         <redisson.version>3.27.2</redisson.version>
         <fastjson.version>2.0.56</fastjson.version>
         <jwt.verion>0.11.5</jwt.verion>
+        <druid.verison>1.2.23</druid.verison>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.verison}</version>
+            </dependency>
             <!-- JWT 核心依赖 -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>

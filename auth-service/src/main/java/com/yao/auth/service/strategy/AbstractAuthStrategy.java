@@ -19,6 +19,7 @@ public abstract class AbstractAuthStrategy implements AuthStrategy{
         return buildAuthUser(userId, credential);
     }
 
+    //各服务实现该接口，比如微信使用 code 换取 openId
     protected abstract ChannelCredential doAuthenticate(LoginRequest request);
 
 
