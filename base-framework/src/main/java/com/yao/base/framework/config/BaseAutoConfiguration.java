@@ -3,6 +3,7 @@ package com.yao.base.framework.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yao.base.framework.aspect.ControllerLogAspect;
 import com.yao.base.framework.filter.TraceIdFilter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,7 @@ import org.springframework.core.Ordered;
 public class BaseAutoConfiguration {
 
     @Bean
+    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
     public FilterRegistrationBean<TraceIdFilter> traceFilterRegistration() {
         FilterRegistrationBean<TraceIdFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(new TraceIdFilter());
