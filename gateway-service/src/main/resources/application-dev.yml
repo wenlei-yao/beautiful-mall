@@ -1,2 +1,31 @@
 server:
   port: 80
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心根据服务名动态路由
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.yaml
