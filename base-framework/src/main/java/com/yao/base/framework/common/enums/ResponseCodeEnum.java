@@ -9,6 +9,7 @@ import lombok.Getter;
 public enum ResponseCodeEnum implements ErrorCode {
     SUCCESS(0, "success"),
     FILE(1,"系统异常"),
+    UNAUTHORIZED(3,"请登录"),
 
     LOGIN_PARAM_EMPTY(400, "用户名或密码不能为空"),
     NOT_LOGIN(401, "未登录！"),

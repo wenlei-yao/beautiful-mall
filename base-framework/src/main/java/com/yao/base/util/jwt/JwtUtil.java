@@ -1,20 +1,18 @@
-package com.yao.auth.service.utils;
+package com.yao.base.util.jwt;
 
-import com.yao.auth.service.properties.JwtProperties;
+import com.yao.base.framework.config.properties.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import io.jsonwebtoken.Jwts;
 
-@Component
 public class JwtUtil {
 
     private final JwtProperties jwtProperties;
@@ -23,7 +21,7 @@ public class JwtUtil {
         this.jwtProperties = jwtProperties;
     }
     // 根据密钥生成 HMAC-SHA 密钥对
-    public SecretKey getSecretKey() {
+    public  SecretKey getSecretKey() {
         byte[] bytes = jwtProperties.getSecret().getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(bytes);
     }

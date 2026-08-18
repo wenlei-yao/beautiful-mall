@@ -29,3 +29,17 @@ spring:
   config:
     import:
       - optional:nacos:${spring.application.name}.yaml
+  redis:
+    host: localhost
+
+redis:
+  starter:
+    enable: true
+
+
+jwt:
+  secret: Rd47dBEohqeWgMtNsc/RN42ZIjpVU+lqRO9mb+LNpUg=
+  # AccessToken 过期时间（单位：毫秒），这里设为 2 小时
+  access-token-expiration: 7200000
+  # RefreshToken 过期时间（单位：毫秒），这里设为 7 天
+  refresh-token-expiration: 604800000

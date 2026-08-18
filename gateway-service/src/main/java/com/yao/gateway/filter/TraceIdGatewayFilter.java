@@ -1,7 +1,6 @@
 package com.yao.gateway.filter;
 
 import com.yao.base.framework.constant.CommonConstants;
-import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;

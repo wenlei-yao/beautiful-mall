@@ -3,7 +3,6 @@ package com.yao.base.framework.redis;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
-import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author 知乎:SamDeepThinking
  */
-@Component
 @RequiredArgsConstructor
 public class RedisService {
 

@@ -1,7 +1,7 @@
 package com.yao.auth.service.service;
 
-import com.yao.auth.service.properties.JwtProperties;
-import com.yao.auth.service.utils.JwtUtil;
+import com.yao.base.framework.config.properties.JwtProperties;
+import com.yao.base.util.jwt.JwtUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -27,6 +27,4 @@ public class TokenService {
                 jwtProperties.getAccessTokenExpiration()
         );
     }
-
-
 }
