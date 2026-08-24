@@ -1,7 +1,7 @@
 package com.yao.auth.service.service;
 
 import com.yao.base.framework.config.properties.JwtProperties;
-import com.yao.base.util.jwt.JwtUtil;
+import com.yao.base.framework.util.jwt.JwtUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

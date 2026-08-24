@@ -1,4 +1,4 @@
-package com.yao.base.util.jwt;
+package com.yao.base.framework.util.jwt;
 
 import com.yao.base.framework.config.properties.JwtProperties;
 import io.jsonwebtoken.Claims;

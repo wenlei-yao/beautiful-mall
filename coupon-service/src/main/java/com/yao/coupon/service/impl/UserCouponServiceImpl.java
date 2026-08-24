@@ -92,7 +92,7 @@ public class UserCouponServiceImpl extends ServiceImpl<UserCouponMapper, UserCou
                 buildLuaScript,
                 Arrays.asList(couponActivityCacheKey, couponTemplateLimitCacheKey),
                 String.valueOf(userLimit),
-                String.valueOf(couponActivity.getEndTime().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli())
+                String.valueOf(couponActivity.getEndTime().atZone(ZoneId.systemDefault()).toInstant().getEpochSecond())
         );
         if (RedisStockDecrementErrorEnum.isFail(stockDecrementLuaResult)) {
             throw new BusinessException(ResponseCodeEnum.TEMPLATE_DECREMENT_FAIL, RedisStockDecrementErrorEnum.fromType(stockDecrementLuaResult));
@@ -134,7 +134,7 @@ public class UserCouponServiceImpl extends ServiceImpl<UserCouponMapper, UserCou
     public UserCouponQueryRespDTO listUserCoupon(UserCouponQueryReqDTO userCouponQueryReqDTO) {
 
         LambdaQueryWrapper<UserCouponDO> queryWrapper = Wrappers.lambdaQuery(UserCouponDO.class)
-                .eq(UserCouponDO::getStatus, UserCouponStatusEnum.UNUSED)
+                .eq(UserCouponDO::getStatus, UserCouponStatusEnum.UNUSED.getCode())
                 .eq(UserCouponDO::getUserId, userCouponQueryReqDTO.getUserId());
         List<UserCouponDO> unUsedCoupons = userCouponMapper.selectList(queryWrapper);
 

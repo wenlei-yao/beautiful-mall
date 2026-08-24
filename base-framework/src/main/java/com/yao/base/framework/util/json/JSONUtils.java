@@ -1,4 +1,4 @@
-package com.yao.base.util.json;
+package com.yao.base.framework.util.json;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
