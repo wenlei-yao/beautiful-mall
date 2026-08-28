@@ -1,0 +1,40 @@
+{
+  "name": "admin-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@iconify/vue": "^5.0.0",
+    "@vueuse/core": "^14.1.0",
+    "axios": "^1.13.2",
+    "naive-ui": "^2.43.2",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@unocss/reset": "^66.5.10",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^10.6.0",
+    "jsdom": "^27.2.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.1",
+    "unocss": "^66.5.10",
+    "vite": "^7.2.6",
+    "vitest": "^4.0.15",
+    "vue-tsc": "^3.1.5"
+  }
+}
+
