@@ -15,6 +15,7 @@ describe('authentication store', () => {
     expect(store.isLoggedIn).toBe(true);
     expect(store.user?.displayName).toBe('超级管理员');
     expect(localStorage.getItem('admin-web-token')).toBe(store.token);
+    expect(localStorage.getItem('admin-web-username')).toBeNull();
     expect(sessionStorage.getItem('admin-web-token')).toBeNull();
   });
 
@@ -34,4 +35,3 @@ describe('authentication store', () => {
     expect(localStorage.getItem('admin-web-token')).toBeNull();
   });
 });
-

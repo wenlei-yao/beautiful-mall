@@ -4,6 +4,7 @@ import * as authService from '@/services/auth';
 import type { AdminUser, LoginPayload } from '@/types/admin';
 
 const TOKEN_KEY = 'admin-web-token';
+const LEGACY_USERNAME_KEY = 'admin-web-username';
 
 function readToken() {
   return localStorage.getItem(TOKEN_KEY) || sessionStorage.getItem(TOKEN_KEY) || '';
@@ -17,7 +18,9 @@ export const useAuthStore = defineStore('auth', () => {
 
   function persistToken(value: string, remember: boolean) {
     localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(LEGACY_USERNAME_KEY);
     sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(LEGACY_USERNAME_KEY);
     const storage = remember ? localStorage : sessionStorage;
     storage.setItem(TOKEN_KEY, value);
     token.value = value;
@@ -59,11 +62,12 @@ export const useAuthStore = defineStore('auth', () => {
 
   function clearSession() {
     localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(LEGACY_USERNAME_KEY);
     sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(LEGACY_USERNAME_KEY);
     token.value = '';
     user.value = null;
   }
 
   return { token, user, loading, isLoggedIn, signIn, signOut, restoreSession, clearSession };
 });
-

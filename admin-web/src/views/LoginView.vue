@@ -28,8 +28,8 @@ const rules: FormRules = {
 async function submit() {
   try {
     await formRef.value?.validate();
-    await authStore.signIn({ username: form.username.trim(), password: form.password }, form.remember);
-    message.success('欢迎回来，超级管理员');
+    const admin = await authStore.signIn({ username: form.username.trim(), password: form.password }, form.remember);
+    message.success(`欢迎回来，${admin.displayName}`);
     const redirect = typeof route.query.redirect === 'string' ? route.query.redirect : '/home';
     await router.replace(redirect);
   } catch (error) {
@@ -158,4 +158,3 @@ async function submit() {
   .demo-account { flex-wrap: wrap; }
 }
 </style>
-

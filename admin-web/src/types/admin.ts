@@ -18,6 +18,25 @@ export interface LoginPayload {
   password: string;
 }
 
+export interface CurrentAdminRole {
+  id: number;
+  code: string;
+  name: string;
+}
+
+export interface CurrentAdminResponse {
+  id: number;
+  username: string;
+  displayName: string;
+  mobile: string | null;
+  enabled: boolean;
+  roles: CurrentAdminRole[];
+  permissions: string[];
+  lastLoginTime: string | null;
+  lastLoginIp: string | null;
+  createdTime: string;
+}
+
 export interface AdminUser {
   id: number;
   username: string;
@@ -55,4 +74,3 @@ export interface Permission {
   status: Status;
   children?: Permission[];
 }
-

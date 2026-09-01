@@ -13,3 +13,12 @@ http.interceptors.request.use(config => {
   return config;
 });
 
+http.interceptors.response.use(
+  response => response,
+  error => {
+    if (axios.isAxiosError<{ message?: string }>(error) && error.response?.data?.message) {
+      error.message = error.response.data.message;
+    }
+    return Promise.reject(error);
+  }
+);
